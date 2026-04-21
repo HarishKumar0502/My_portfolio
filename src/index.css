@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-zinc-950 text-slate-200 overflow-x-hidden;
+  }
+}
+
+/* Subtle Animated Web Pattern */
+.web-pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  opacity: 0.04; /* very low opacity as requested */
+  background-image: 
+    radial-gradient(circle at center, transparent 0%, transparent 20%, rgba(255,255,255,1) 21%, transparent 22%),
+    linear-gradient(0deg, transparent 49%, rgba(255,255,255,1) 50%, transparent 51%),
+    linear-gradient(45deg, transparent 49%, rgba(255,255,255,1) 50%, transparent 51%),
+    linear-gradient(90deg, transparent 49%, rgba(255,255,255,1) 50%, transparent 51%),
+    linear-gradient(135deg, transparent 49%, rgba(255,255,255,1) 50%, transparent 51%);
+  background-size: 150px 150px;
+  background-position: center center;
+  animation: bgPulse 10s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes bgPulse {
+  0% { transform: scale(1); opacity: 0.03; }
+  100% { transform: scale(1.05); opacity: 0.06; }
+}
+
+.glass-card {
+  @apply bg-zinc-900/50 backdrop-blur-md border border-white/5 rounded-2xl transition-all duration-300;
+}
+
+.glass-card:hover {
+  @apply border-spideyRed/40 shadow-[0_0_15px_rgba(139,0,0,0.2)] -translate-y-1;
+}
+
+/* Glow effects */
+.hover-glow {
+  @apply transition-all duration-300;
+}
+
+.hover-glow:hover {
+  @apply drop-shadow-[0_0_8px_rgba(0,191,255,0.6)];
+}
+
+.text-glow-red {
+  text-shadow: 0 0 10px rgba(139, 0, 0, 0.7);
+}
+
+.text-glow-blue {
+  text-shadow: 0 0 10px rgba(0, 191, 255, 0.7);
+}
