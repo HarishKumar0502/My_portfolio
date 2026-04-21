@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { Download, Mail, Activity } from 'lucide-react';
-
+import Profile_pic from "../assets/img.jpeg"
 export default function Hero() {
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center pt-24 pb-12 px-6">
@@ -21,7 +21,7 @@ export default function Hero() {
             {/* Avatar Container */}
             <div className="relative h-64 w-64 md:h-80 md:w-80 rounded-full overflow-hidden border-2 border-zinc-800 bg-zinc-900 flex items-center justify-center">
               <img
-                src="/assets/profile.jpg"
+                src="../assets/profile.jpg"
                 alt="Harish Kumar R"
                 className="w-full h-full object-cover"
                 onError={(e) => {
@@ -77,7 +77,7 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <a
-              href="/assets/Harish_Kumar_Resume.pdf"
+              href="./assets/Harish_Kumar_Resume.pdf"
               download
               target="_blank"
               rel="noopener noreferrer"
